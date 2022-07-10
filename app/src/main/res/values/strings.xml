@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">E-Commerce App</string>
+
+    <string name="invalid_mail">Not a valid email address. Should be your@email.com</string>
+    <string name="invalid_nickname">Please enter a nickname</string>
+    <string name="invalid_phone_number">Please enter a phone number</string>
+    <string name="invalid_password">"Invalid Password"</string>
+    <string name="invalid_verify_password">"Invalid Verify Password"</string>
+    <string name="invalid_cardholder_name">"Please enter cardholder name"</string>
+    <string name="invalid_credit_card_number">"Please enter credit card number"</string>
+    <string name="invalid_month">"Please select month"</string>
+    <string name="invalid_year">"Please select year"</string>
+    <string name="invalid_cvc_code">"Please enter CVC code"</string>
+    <string name="invalid_address">"Please enter address"</string>
+    <string name="invalid_bag_products">"There are no products in the cart"</string>
+
+    <string name="something_went_wrong">"Something went wrong"</string>
+
+    <string name="already_have_account">Already have an account?</string>
+    <string name="social_sign_up">Or sign up with social account</string>
+    <string name="social_login">Or login with social account</string>
+    <string name="forgot_password_text">Please, enter your email address. You will receive a link to create a new password via email.</string>
+
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="verify_password">Verify Password</string>
+    <string name="nickname">Nickname</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="send">Send</string>
+    <string name="add_to_bag">Add to Bag</string>
+    <string name="add_to_favorites">Add to Favorites</string>
+    <string name="email_sent">Email sent</string>
+    <string name="cardholder_name">Cardholder Name</string>
+    <string name="credit_card_number">Credit Card Number</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="cvc_code">CVC Code</string>
+    <string name="address">Address</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="payment">Payment</string>
+    <string name="total_amount">Total Amount:</string>
+    <string name="welcome">Welcome</string>
+    <string name="continue_shopping">Continue Shopping</string>
+</resources>

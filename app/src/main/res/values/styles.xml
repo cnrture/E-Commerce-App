@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Header">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_28ssp</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="Big">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="Large">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="Medium">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="Small">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="Very_Small">
+        <item name="fontFamily">@font/circularstd</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+</resources>
