@@ -15,7 +15,8 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_100sdp"
-        android:layout_margin="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         app:cardCornerRadius="@dimen/_8sdp"
         app:cardElevation="@dimen/_8sdp">
 

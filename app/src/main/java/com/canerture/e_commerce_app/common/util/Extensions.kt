@@ -1,8 +1,11 @@
 package com.canerture.e_commerce_app.common.util
 
 import android.app.Activity
+import android.content.Context
 import android.util.Patterns
+import android.util.TypedValue
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.AutoCompleteTextView
 import com.google.android.material.snackbar.Snackbar
@@ -63,3 +66,19 @@ fun AutoCompleteTextView.checkMonthYear(value: Int, errorString: String): Boolea
         false
     }
 }
+
+fun View.margin(left: Int? = null, top: Int? = null, right: Int? = null, bottom: Int? = null) {
+    layoutParams<ViewGroup.MarginLayoutParams> {
+        left?.run { leftMargin = dpToPx(this) }
+        top?.run { topMargin = dpToPx(this) }
+        right?.run { rightMargin = dpToPx(this) }
+        bottom?.run { bottomMargin = dpToPx(this) }
+    }
+}
+
+inline fun <reified T : ViewGroup.LayoutParams> View.layoutParams(block: T.() -> Unit) {
+    if (layoutParams is T) block(layoutParams as T)
+}
+
+fun View.dpToPx(dp: Int): Int = context.dpToPx(dp)
+fun Context.dpToPx(dp: Int): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics).toInt()

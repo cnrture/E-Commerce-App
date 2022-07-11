@@ -264,7 +264,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginHorizontal="@dimen/_12sdp"
-            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_28sdp"
             android:backgroundTint="@color/blue"
             android:text="@string/pay_now"
             android:textAllCaps="false"

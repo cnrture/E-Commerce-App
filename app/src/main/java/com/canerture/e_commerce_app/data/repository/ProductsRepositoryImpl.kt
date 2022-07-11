@@ -32,7 +32,7 @@ class ProductsRepositoryImpl @Inject constructor(
                     product.title,
                     product.saleState,
                     favoriteNamesList.contains(product.title),
-                    if (product.saleState == 1) (product.price * 85) / 100 else product.price
+                    if (product.saleState == 1) (product.price * 85) / 100 else null
                 )
             )
         }
@@ -83,7 +83,35 @@ class ProductsRepositoryImpl @Inject constructor(
 
     override suspend fun clearBag() = remoteDataSource.clearBag()
 
-    override suspend fun searchProduct(query: String) = remoteDataSource.searchProduct(query)
+    override suspend fun searchProduct(query: String): List<Product> {
+
+        val productList = remoteDataSource.searchProduct(query)
+        val tempList = arrayListOf<Product>()
+        val favoriteNamesList = localDataSource.getFavoritesNamesList().orEmpty()
+
+        for (i in 0..3) {
+            productList.getOrNull(i)?.let {
+                tempList.add(
+                    Product(
+                        it.id,
+                        it.category,
+                        it.count,
+                        it.description,
+                        it.image,
+                        it.imageTwo,
+                        it.imageThree,
+                        it.price,
+                        it.rate,
+                        it.title,
+                        it.saleState,
+                        favoriteNamesList.contains(it.title),
+                        if (it.saleState == 1) (it.price * 85) / 100 else null
+                    )
+                )
+            }
+        }
+        return tempList
+    }
 
     override suspend fun addToFavorites(product: Product) = localDataSource.addToFavorites(product)
 
@@ -107,7 +135,7 @@ class ProductsRepositoryImpl @Inject constructor(
                     product.title,
                     product.saleState,
                     true,
-                    if (product.saleState == 1) (product.price * 85) / 100 else product.price
+                    if (product.saleState == 1) (product.price * 85) / 100 else null
                 )
             )
         }

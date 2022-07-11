@@ -10,17 +10,13 @@
             name="product"
             type="com.canerture.e_commerce_app.data.model.Product" />
 
-        <variable
-            name="count"
-            type="String" />
-
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_100sdp"
         android:layout_margin="@dimen/_8sdp"
-        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/_8sdp"
         app:cardElevation="@dimen/_4sdp">
 
@@ -32,30 +28,46 @@
                 android:id="@+id/img_product"
                 setImage="@{product.image}"
                 android:layout_width="@dimen/_100sdp"
-                android:layout_height="0dp"
-                android:padding="@dimen/_10sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:padding="@dimen/_12sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_product_name"
+                android:id="@+id/tv_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:ellipsize="end"
-                android:gravity="center|start"
-                android:lines="2"
-                android:maxLines="2"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:gravity="center"
                 android:text="@{product.title}"
+                android:textAlignment="center"
+                android:textAllCaps="false"
                 android:textAppearance="@style/Small"
-                app:layout_constraintBottom_toTopOf="@+id/tv_price"
-                app:layout_constraintEnd_toStartOf="@+id/img_delete"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/img_product"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Product Name" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@android:style/Widget.Material.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:rating="@{Float.valueOf(String.valueOf(product.rate))}"
+                android:secondaryProgressTint="@color/blue"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toTopOf="@+id/tv_price"
+                app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_price"
@@ -63,65 +75,31 @@
                 salePrice="@{product.salePrice}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
+                android:textAlignment="center"
                 android:textAppearance="@style/Medium"
-                app:layout_constraintBottom_toTopOf="@+id/img_decrease"
-                app:layout_constraintStart_toStartOf="@+id/tv_product_name"
-                app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
-                tools:text="30$" />
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_product_sale"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/img_product"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                tools:text="100₺" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_product_count"
+                android:id="@+id/tv_product_sale"
+                saleTextPrice="@{product.salePrice}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:ellipsize="end"
-                android:text="@{count}"
+                android:layout_marginStart="@dimen/_4sdp"
                 android:textAppearance="@style/Medium"
-                app:layout_constraintBottom_toBottomOf="@+id/img_decrease"
-                app:layout_constraintEnd_toStartOf="@+id/img_increase"
-                app:layout_constraintStart_toEndOf="@+id/img_decrease"
-                app:layout_constraintTop_toTopOf="@+id/img_decrease" />
-
-            <ImageView
-                android:id="@+id/img_increase"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:background="@drawable/bg_circle"
-                android:elevation="@dimen/_8sdp"
-                android:padding="@dimen/_2sdp"
-                android:src="@drawable/ic_increase"
-                app:layout_constraintBottom_toBottomOf="@+id/img_decrease"
-                app:layout_constraintStart_toEndOf="@+id/tv_product_count"
-                app:layout_constraintTop_toTopOf="@+id/img_decrease" />
-
-            <ImageView
-                android:id="@+id/img_decrease"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:background="@drawable/bg_circle"
-                android:elevation="@dimen/_8sdp"
-                android:padding="@dimen/_2sdp"
-                android:src="@drawable/ic_decrease"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tv_product_name"
-                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
-
-            <ImageView
-                android:id="@+id/img_delete"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:background="@drawable/bg_delete"
-                android:padding="@dimen/_6sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_delete"
-                app:tint="@color/white" />
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_price"
+                app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                app:layout_constraintStart_toEndOf="@+id/tv_price"
+                app:layout_constraintTop_toTopOf="@+id/tv_price"
+                tools:text="50₺" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
+    </androidx.cardview.widget.CardView>
 </layout>

@@ -52,7 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_45sdp"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_28sdp"
         android:backgroundTint="@color/blue"
         android:text="@string/buy_now"
         android:textAllCaps="false"

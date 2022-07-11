@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.canerture.e_commerce_app.common.util.margin
 import com.canerture.e_commerce_app.data.model.Product
 import e_commerce_app.databinding.ItemFavoriteBinding
 
@@ -19,13 +20,14 @@ class FavoritesAdapter : RecyclerView.Adapter<FavoritesAdapter.ProductsViewHolde
         return ProductsViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
-        holder.bind(list[position])
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
+        holder.bind(list[position], position)
+    }
 
     inner class ProductsViewHolder(private var binding: ItemFavoriteBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Product) {
+        fun bind(item: Product, position: Int) {
             with(binding) {
 
                 product = item
@@ -39,6 +41,14 @@ class FavoritesAdapter : RecyclerView.Adapter<FavoritesAdapter.ProductsViewHolde
                 }
 
                 imgDelete.setOnClickListener { onDeleteClick(item.id) }
+
+                if (position == list.size - 1) {
+                    binding.cardView.margin(
+                        bottom = cardView.context.resources.getDimensionPixelSize(
+                            com.intuit.sdp.R.dimen._12sdp
+                        )
+                    )
+                }
             }
         }
     }

@@ -26,7 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_44sdp"
         android:layout_marginHorizontal="@dimen/_40sdp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/_28sdp"
         android:backgroundTint="@color/blue"
         android:text="@string/continue_shopping"
         android:textAllCaps="false"

@@ -55,17 +55,14 @@ class SearchProductFragment : BottomSheetDialogFragment() {
 
                 bsLayout.minimumHeight = resources.displayMetrics.heightPixels
 
-                //bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-
                 searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                     override fun onQueryTextSubmit(query: String?): Boolean {
-                        searchProduct(query.orEmpty())
                         return false
                     }
 
                     override fun onQueryTextChange(newText: String?): Boolean {
-                        if (newText.isNullOrEmpty()) {
-                            hideKeyboard(requireActivity(), view)
+                        newText?.let {
+                            searchProduct(it)
                         }
                         return false
                     }
