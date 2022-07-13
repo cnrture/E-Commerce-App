@@ -6,12 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.data.model.Product
-import com.canerture.e_commerce_app.domain.usecase.product.GetProductsByCategoryUseCase
-import com.canerture.e_commerce_app.domain.usecase.product.GetProductsUseCase
 import com.canerture.e_commerce_app.domain.usecase.product.SearchProductUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.http.Query
 import javax.inject.Inject
 
 @HiltViewModel

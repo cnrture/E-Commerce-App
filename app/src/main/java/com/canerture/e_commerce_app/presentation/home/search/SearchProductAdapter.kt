@@ -13,7 +13,8 @@ class SearchProductAdapter : RecyclerView.Adapter<SearchProductAdapter.ProductsV
     private val list = ArrayList<Product>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
-        val binding = ItemSearchProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemSearchProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProductsViewHolder(binding)
     }
 

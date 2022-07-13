@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.presentation
+package com.canerture.e_commerce_app.presentation.splash
 
 import android.os.Bundle
 import android.view.View
@@ -13,8 +13,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class SplashFragment : Fragment(R.layout.fragment_splash) {
-
-    private val binding by viewBinding(FragmentSplashBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

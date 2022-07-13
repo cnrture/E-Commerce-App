@@ -40,7 +40,6 @@ fun saleText(
     saleTextPrice: Double?
 ) {
     if (saleTextPrice != null) {
-        
         tvSale.text = String.format("%.3f₺", saleTextPrice)
     } else {
         tvSale.gone()

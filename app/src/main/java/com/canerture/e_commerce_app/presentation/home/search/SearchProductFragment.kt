@@ -9,7 +9,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.util.gone
-import com.canerture.e_commerce_app.common.util.hideKeyboard
 import com.canerture.e_commerce_app.common.util.showSnackbar
 import com.canerture.e_commerce_app.common.util.visible
 import com.google.android.material.bottomsheet.BottomSheetBehavior

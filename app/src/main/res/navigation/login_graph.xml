@@ -44,7 +44,7 @@
     <include app:graph="@navigation/main_graph" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.canerture.e_commerce_app.presentation.SplashFragment"
+        android:name="com.canerture.e_commerce_app.presentation.splash.SplashFragment"
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_signUpFragment"

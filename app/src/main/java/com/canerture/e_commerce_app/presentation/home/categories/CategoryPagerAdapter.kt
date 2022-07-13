@@ -3,7 +3,6 @@ package com.canerture.e_commerce_app.presentation.home.categories
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.canerture.e_commerce_app.presentation.home.categories.CategoryFragment
 
 const val CATEGORY = "category"
 

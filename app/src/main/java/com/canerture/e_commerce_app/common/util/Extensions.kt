@@ -28,12 +28,6 @@ fun View.showSnackbar(msg: String) {
     Snackbar.make(this, msg, 1500).show()
 }
 
-fun hideKeyboard(activity: Activity, view: View) {
-    val inputMethodManager =
-        activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-    inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
-}
-
 fun TextInputEditText.isNullorEmpty(errorString: String): Boolean {
     val textInputLayout = this.parent.parent as TextInputLayout
     return if (text.toString().trim().isNotEmpty()) {
@@ -81,4 +75,6 @@ inline fun <reified T : ViewGroup.LayoutParams> View.layoutParams(block: T.() ->
 }
 
 fun View.dpToPx(dp: Int): Int = context.dpToPx(dp)
-fun Context.dpToPx(dp: Int): Int = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics).toInt()
+fun Context.dpToPx(dp: Int): Int =
+    TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics)
+        .toInt()
