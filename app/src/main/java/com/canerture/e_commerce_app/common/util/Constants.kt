@@ -1,7 +1,7 @@
 package com.canerture.e_commerce_app.common.util
 
 object Constants {
-    const val BASE_URL = "https://canerture.com/api/ecommerce/"
+    const val BASE_URL = "https://api.canerture.com/ecommerce/"
     const val USER = "canerture"
 
     const val ID = "id"
