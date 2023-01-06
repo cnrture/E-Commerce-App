@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.presentation.home.search
+package com.canerture.e_commerce_app.presentation.search
 
 import android.app.Dialog
 import android.os.Bundle
@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import e_commerce_app.databinding.FragmentSearchProductBinding
 
 @AndroidEntryPoint
-class SearchProductFragment : BottomSheetDialogFragment() {
+class SearchFragment : BottomSheetDialogFragment() {
 
     private var _binding: FragmentSearchProductBinding? = null
     private val binding get() = _binding!!
@@ -28,9 +28,9 @@ class SearchProductFragment : BottomSheetDialogFragment() {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
 
-    private val searchProductViewModel: SearchProductViewModel by viewModels()
+    private val searchViewModel: SearchViewModel by viewModels()
 
-    private val searchProductAdapter by lazy { SearchProductAdapter() }
+    private val searchAdapter by lazy { SearchAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +51,7 @@ class SearchProductFragment : BottomSheetDialogFragment() {
 
         with(binding) {
 
-            with(searchProductViewModel) {
+            with(searchViewModel) {
 
                 bsLayout.minimumHeight = resources.displayMetrics.heightPixels
 
@@ -68,8 +68,8 @@ class SearchProductFragment : BottomSheetDialogFragment() {
                     }
                 })
 
-                searchProductAdapter.onProductClick = {
-                    val action = SearchProductFragmentDirections.searchToDetail(it)
+                searchAdapter.onProductClick = {
+                    val action = SearchFragmentDirections.searchToDetail(it)
                     findNavController().navigate(action)
                 }
             }
@@ -80,20 +80,20 @@ class SearchProductFragment : BottomSheetDialogFragment() {
 
         with(binding) {
 
-            with(searchProductViewModel) {
+            with(searchViewModel) {
 
                 products.observe(viewLifecycleOwner) {
                     when (it) {
                         is Resource.Success -> {
                             progressBar.gone()
-                            searchProductAdapter.updateList(it.data)
-                            rvSearchProducts.adapter = searchProductAdapter
+                            searchAdapter.updateList(it.data)
+                            rvSearchProducts.adapter = searchAdapter
                         }
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
-                        is Resource.Loading -> progressBar.visible()
+                        Resource.Loading -> progressBar.visible()
                     }
                 }
             }

@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.presentation.payment
+package com.canerture.e_commerce_app.presentation.paymentsuccess
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

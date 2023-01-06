@@ -12,22 +12,18 @@ import kotlinx.parcelize.Parcelize
 data class Product(
 
     @PrimaryKey(autoGenerate = true)
-    @SerializedName("id")
     @ColumnInfo(name = "id")
     val id: Int,
 
-    @SerializedName("category")
+    @ColumnInfo(name = "category")
     val category: String,
 
-    @SerializedName("count")
     @ColumnInfo(name = "count")
     val count: Int,
 
-    @SerializedName("description")
     @ColumnInfo(name = "description")
     val description: String,
 
-    @SerializedName("image")
     @ColumnInfo(name = "image")
     val image: String,
 
@@ -39,15 +35,12 @@ data class Product(
     @ColumnInfo(name = "image_three")
     val imageThree: String,
 
-    @SerializedName("price")
     @ColumnInfo(name = "price")
     val price: Double,
 
-    @SerializedName("rate")
     @ColumnInfo(name = "rate")
     val rate: Double,
 
-    @SerializedName("title")
     @ColumnInfo(name = "title")
     val title: String,
 
@@ -59,6 +52,5 @@ data class Product(
     val isFavorite: Boolean = false,
 
     @ColumnInfo(name = "salePrice")
-    val salePrice: Double?,
-
-    ) : Parcelable
+    val salePrice: Double?
+) : Parcelable

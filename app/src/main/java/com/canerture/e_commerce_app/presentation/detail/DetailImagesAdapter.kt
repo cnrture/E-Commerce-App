@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import e_commerce_app.databinding.ItemDetailImageBinding
 
-class ProductDetailImagesAdapter :
-    RecyclerView.Adapter<ProductDetailImagesAdapter.ProductsViewHolder>() {
+class DetailImagesAdapter :
+    RecyclerView.Adapter<DetailImagesAdapter.ProductsViewHolder>() {
 
     private val list = ArrayList<String>()
 

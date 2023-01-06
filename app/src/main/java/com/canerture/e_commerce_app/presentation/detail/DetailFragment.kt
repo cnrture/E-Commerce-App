@@ -18,13 +18,13 @@ import e_commerce_app.databinding.FragmentProductDetailBinding
 import kotlin.math.abs
 
 @AndroidEntryPoint
-class ProductDetailFragment : Fragment(R.layout.fragment_product_detail) {
+class DetailFragment : Fragment(R.layout.fragment_product_detail) {
 
     private val binding by viewBinding(FragmentProductDetailBinding::bind)
 
     private val detailViewModel: DetailViewModel by viewModels()
 
-    private val productDetailImagesAdapter by lazy { ProductDetailImagesAdapter() }
+    private val detailImagesAdapter by lazy { DetailImagesAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,7 +46,6 @@ class ProductDetailFragment : Fragment(R.layout.fragment_product_detail) {
     private fun initObservers() {
 
         with(binding) {
-
             with(detailViewModel) {
 
                 product.observe(viewLifecycleOwner) {
@@ -55,7 +54,7 @@ class ProductDetailFragment : Fragment(R.layout.fragment_product_detail) {
 
                     val imageList = listOf(it.image, it.imageTwo, it.imageThree)
 
-                    productDetailImagesAdapter.updateList(imageList)
+                    detailImagesAdapter.updateList(imageList)
                     val compositePageTransformer = CompositePageTransformer()
                     compositePageTransformer.addTransformer { page, position ->
                         val r = 1 - abs(position)
@@ -63,7 +62,7 @@ class ProductDetailFragment : Fragment(R.layout.fragment_product_detail) {
                     }
 
                     viewPager.apply {
-                        adapter = productDetailImagesAdapter
+                        adapter = detailImagesAdapter
                         clipToPadding = false
                         clipChildren = false
                         offscreenPageLimit = 3
@@ -83,16 +82,15 @@ class ProductDetailFragment : Fragment(R.layout.fragment_product_detail) {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
-                        is Resource.Loading -> progressBar.visible()
+                        Resource.Loading -> progressBar.visible()
                     }
                 }
 
                 isFavorite.observe(viewLifecycleOwner) {
-                    if (it) {
-                        imgFavorite.setImageResource(R.drawable.ic_favorite_selected)
-                    } else {
-                        imgFavorite.setImageResource(R.drawable.ic_favorite_unselected)
-                    }
+                    imgFavorite.setImageResource(
+                        if (it) R.drawable.ic_favorite_selected
+                        else R.drawable.ic_favorite_unselected
+                    )
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.presentation.home.search
+package com.canerture.e_commerce_app.presentation.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchProductViewModel @Inject constructor(
+class SearchViewModel @Inject constructor(
     private val searchProductUseCase: SearchProductUseCase,
 ) : ViewModel() {
 

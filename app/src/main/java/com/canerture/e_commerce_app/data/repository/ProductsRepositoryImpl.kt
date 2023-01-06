@@ -13,59 +13,34 @@ class ProductsRepositoryImpl @Inject constructor(
 
     override suspend fun getProducts(): List<Product> {
 
-        val productList = arrayListOf<Product>()
         val favoriteNamesList = localDataSource.getFavoritesNamesList().orEmpty()
 
-        remoteDataSource.getProducts().forEach { product ->
-
-            productList.add(
+        return remoteDataSource.getProducts().map {
+            with(it) {
                 Product(
-                    product.id,
-                    product.category,
-                    product.count,
-                    product.description,
-                    product.image,
-                    product.imageTwo,
-                    product.imageThree,
-                    product.price,
-                    product.rate,
-                    product.title,
-                    product.saleState,
-                    favoriteNamesList.contains(product.title),
-                    if (product.saleState == 1) (product.price * 85) / 100 else null
+                    id, category, count, description, image, imageTwo, imageThree,
+                    price, rate, title, saleState,
+                    favoriteNamesList.contains(title),
+                    if (saleState == 1) (price * 85) / 100 else null
                 )
-            )
+            }
         }
-        return productList
     }
 
     override suspend fun getSaleProducts(): List<Product> {
 
-        val saleProductList = arrayListOf<Product>()
         val favoriteNamesList = localDataSource.getFavoritesNamesList().orEmpty()
 
-        remoteDataSource.getSaleProducts().forEach { product ->
-
-            saleProductList.add(
+        return remoteDataSource.getSaleProducts().map {
+            with(it) {
                 Product(
-                    product.id,
-                    product.category,
-                    product.count,
-                    product.description,
-                    product.image,
-                    product.imageTwo,
-                    product.imageThree,
-                    product.price,
-                    product.rate,
-                    product.title,
-                    product.saleState,
-                    favoriteNamesList.contains(product.title),
-                    (product.price * 85) / 100
+                    id, category, count, description, image, imageTwo, imageThree,
+                    price, rate, title, saleState,
+                    favoriteNamesList.contains(title),
+                    (price * 85) / 100
                 )
-            )
+            }
         }
-
-        return saleProductList
     }
 
     override suspend fun addToBag(product: Product) = remoteDataSource.addToBag(product)
@@ -115,33 +90,16 @@ class ProductsRepositoryImpl @Inject constructor(
 
     override suspend fun addToFavorites(product: Product) = localDataSource.addToFavorites(product)
 
-    override suspend fun getFavorites(): List<Product> {
-
-        val favoriteList = arrayListOf<Product>()
-
-        localDataSource.getFavorites()?.forEach { product ->
-
-            favoriteList.add(
-                Product(
-                    product.id,
-                    product.category,
-                    product.count,
-                    product.description,
-                    product.image,
-                    product.imageTwo,
-                    product.imageThree,
-                    product.price,
-                    product.rate,
-                    product.title,
-                    product.saleState,
-                    true,
-                    if (product.saleState == 1) (product.price * 85) / 100 else null
-                )
+    override suspend fun getFavorites(): List<Product> = localDataSource.getFavorites()?.map {
+        with(it) {
+            Product(
+                id, category, count, description, image, imageTwo, imageThree,
+                price, rate, title, saleState,
+                true,
+                if (saleState == 1) (price * 85) / 100 else null
             )
         }
-
-        return favoriteList
-    }
+    } ?: arrayListOf()
 
     override suspend fun deleteFromFavorites(id: Int) = localDataSource.deleteFromFavorites(id)
 

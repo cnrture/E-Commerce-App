@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.presentation.home.search
+package com.canerture.e_commerce_app.presentation.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.canerture.e_commerce_app.data.model.Product
 import e_commerce_app.databinding.ItemSearchProductBinding
 
-class SearchProductAdapter : RecyclerView.Adapter<SearchProductAdapter.ProductsViewHolder>() {
+class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ProductsViewHolder>() {
 
     private val list = ArrayList<Product>()
 

@@ -59,11 +59,8 @@ fun AutoCompleteTextView.checkMonthYear(value: Int, errorString: String): Boolea
     }
 }
 
-fun View.margin(left: Int? = null, top: Int? = null, right: Int? = null, bottom: Int? = null) {
+fun View.margin(bottom: Int? = null) {
     layoutParams<ViewGroup.MarginLayoutParams> {
-        left?.run { leftMargin = dpToPx(this) }
-        top?.run { topMargin = dpToPx(this) }
-        right?.run { rightMargin = dpToPx(this) }
         bottom?.run { bottomMargin = dpToPx(this) }
     }
 }

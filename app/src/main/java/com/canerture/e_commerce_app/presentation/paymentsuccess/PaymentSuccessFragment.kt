@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.presentation.payment
+package com.canerture.e_commerce_app.presentation.paymentsuccess
 
 import android.os.Bundle
 import android.view.View
@@ -34,12 +34,9 @@ class PaymentSuccessFragment : Fragment(R.layout.fragment_payment_success) {
 
         paymentSuccessViewModel.result.observe(viewLifecycleOwner) {
             when (it) {
-                is Resource.Success -> {
-                    findNavController().navigate(R.id.action_paymentSuccessFragment_to_homeFragment)
-                }
-
+                is Resource.Success -> findNavController().navigate(R.id.action_paymentSuccessFragment_to_homeFragment)
                 is Resource.Error -> requireView().showSnackbar(getString(R.string.something_went_wrong))
-                is Resource.Loading -> {}
+                Resource.Loading -> Unit
             }
         }
     }
