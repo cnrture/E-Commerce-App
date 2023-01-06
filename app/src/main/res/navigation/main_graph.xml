@@ -10,7 +10,7 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/detailFragment" />
         <action
             android:id="@+id/action_homeFragment_to_bagFragment"
             app:destination="@id/bagFragment" />
@@ -24,7 +24,7 @@
             app:destination="@id/paymentFragment" />
         <action
             android:id="@+id/action_bagFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
@@ -32,15 +32,15 @@
         android:label="FavoritesFragment" >
         <action
             android:id="@+id/action_favoritesFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.canerture.e_commerce_app.presentation.profile.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
-        android:id="@+id/productDetailFragment"
-        android:name="com.canerture.e_commerce_app.presentation.detail.ProductDetailFragment"
+        android:id="@+id/detailFragment"
+        android:name="com.canerture.e_commerce_app.presentation.detail.DetailFragment"
         android:label="ProductDetailFragment" >
         <action
             android:id="@+id/action_productDetailFragment_to_homeFragment"
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/paymentSuccessFragment"
-        android:name="com.canerture.e_commerce_app.presentation.payment.PaymentSuccessFragment"
+        android:name="com.canerture.e_commerce_app.presentation.paymentsuccess.PaymentSuccessFragment"
         android:label="PaymentSuccessFragment" >
         <action
             android:id="@+id/action_paymentSuccessFragment_to_homeFragment"
@@ -67,10 +67,10 @@
     </fragment>
     <dialog
         android:id="@+id/searchFragment"
-        android:name="com.canerture.e_commerce_app.presentation.home.search.SearchProductFragment"
+        android:name="com.canerture.e_commerce_app.presentation.search.SearchFragment"
         android:label="SearchFragment" >
         <action
             android:id="@+id/searchToDetail"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/detailFragment" />
     </dialog>
 </navigation>

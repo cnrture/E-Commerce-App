@@ -72,7 +72,7 @@ class BagFragment : Fragment(R.layout.fragment_bag) {
                             progressBar.gone()
                             requireView().showSnackbar(result.throwable.message.toString())
                         }
-                        is Resource.Loading -> progressBar.visible()
+                        Resource.Loading -> progressBar.visible()
                     }
                 }
 

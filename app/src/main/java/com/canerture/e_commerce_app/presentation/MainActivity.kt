@@ -30,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
 
             when (destination.id) {
-                R.id.splashFragment, R.id.signInFragment, R.id.signUpFragment, R.id.forgotPasswordFragment, R.id.paymentSuccessFragment -> {
+                R.id.splashFragment,
+                R.id.signInFragment,
+                R.id.signUpFragment,
+                R.id.forgotPasswordFragment,
+                R.id.paymentSuccessFragment -> {
                     binding.bottomNav.gone()
                     binding.floatingActionButton.gone()
                 }

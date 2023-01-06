@@ -47,7 +47,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
-                        is Resource.Loading -> progressBar.visible()
+                        Resource.Loading -> progressBar.visible()
                     }
                 }
             }

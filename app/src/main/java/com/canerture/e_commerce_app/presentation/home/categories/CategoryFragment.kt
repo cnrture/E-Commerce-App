@@ -44,7 +44,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
                     binding.progressBar.gone()
                     requireView().showSnackbar(it.throwable.message.toString())
                 }
-                is Resource.Loading -> binding.progressBar.visible()
+                Resource.Loading -> binding.progressBar.visible()
             }
         }
     }

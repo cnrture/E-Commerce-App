@@ -46,7 +46,7 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
                         progressBar.gone()
                         requireView().showSnackbar(it.throwable.message.toString())
                     }
-                    is Resource.Loading -> progressBar.gone()
+                    Resource.Loading -> progressBar.gone()
                 }
             }
         }

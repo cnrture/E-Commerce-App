@@ -43,7 +43,7 @@ class ForgotPasswordFragment : Fragment(R.layout.fragment_forgot_password) {
                         progressBar.gone()
                         requireView().showSnackbar(getString(R.string.something_went_wrong))
                     }
-                    is Resource.Loading -> progressBar.visible()
+                    Resource.Loading -> progressBar.visible()
                 }
             }
         }

@@ -23,8 +23,7 @@ object DataSourceModule {
     fun provideRemoteDataSource(
         productService: ProductService,
         authenticator: Authenticator
-    ): RemoteDataSource =
-        RemoteDataSourceImpl(productService, authenticator)
+    ): RemoteDataSource = RemoteDataSourceImpl(productService, authenticator)
 
     @Provides
     @Singleton

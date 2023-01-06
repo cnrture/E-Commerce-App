@@ -52,7 +52,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                         progressBar.gone()
                         requireView().showSnackbar(it.throwable.message.toString())
                     }
-                    is Resource.Loading -> progressBar.visible()
+                    Resource.Loading -> progressBar.visible()
                 }
             }
         }
