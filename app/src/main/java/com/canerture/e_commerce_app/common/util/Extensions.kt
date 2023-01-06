@@ -1,12 +1,10 @@
 package com.canerture.e_commerce_app.common.util
 
-import android.app.Activity
 import android.content.Context
 import android.util.Patterns
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.AutoCompleteTextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText

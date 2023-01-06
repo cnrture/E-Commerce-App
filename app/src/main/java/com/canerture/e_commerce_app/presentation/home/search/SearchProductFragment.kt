@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.util.gone
 import com.canerture.e_commerce_app.common.util.showSnackbar
@@ -34,7 +35,7 @@ class SearchProductFragment : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSearchProductBinding.inflate(layoutInflater)
         return binding.root
@@ -66,6 +67,11 @@ class SearchProductFragment : BottomSheetDialogFragment() {
                         return false
                     }
                 })
+
+                searchProductAdapter.onProductClick = {
+                    val action = SearchProductFragmentDirections.searchToDetail(it)
+                    findNavController().navigate(action)
+                }
             }
         }
     }

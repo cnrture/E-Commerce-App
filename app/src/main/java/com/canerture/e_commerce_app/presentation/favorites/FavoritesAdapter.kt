@@ -14,15 +14,15 @@ class FavoritesAdapter : RecyclerView.Adapter<FavoritesAdapter.ProductsViewHolde
 
     var onDeleteClick: (Int) -> Unit = {}
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
-        val binding =
-            ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ProductsViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder =
+        ProductsViewHolder(
+            ItemFavoriteBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
 
-    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
         holder.bind(list[position], position)
-    }
 
     inner class ProductsViewHolder(private var binding: ItemFavoriteBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -2,7 +2,6 @@ package com.canerture.e_commerce_app.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.canerture.e_commerce_app.data.model.Product
 import e_commerce_app.R
@@ -12,17 +11,18 @@ class SaleProductsAdapter : RecyclerView.Adapter<SaleProductsAdapter.ProductsVie
 
     private val list = ArrayList<Product>()
 
+    var onProductClick: (Product) -> Unit = {}
     var onFavoriteClick: (Product) -> Unit = {}
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
-        val binding =
-            ItemSaleProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ProductsViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder =
+        ProductsViewHolder(
+            ItemSaleProductBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
 
-    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
         holder.bind(list[position])
-    }
 
     inner class ProductsViewHolder(private var binding: ItemSaleProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -45,16 +45,14 @@ class SaleProductsAdapter : RecyclerView.Adapter<SaleProductsAdapter.ProductsVie
                 }
 
                 imgProduct.setOnClickListener {
-                    val action =
-                        HomeFragmentDirections.actionHomeFragmentToProductDetailFragment(item)
-                    it.findNavController().navigate(action)
+                    onProductClick(item)
                 }
             }
 
         }
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount() = list.size
 
     fun updateList(updatedList: List<Product>) {
         list.clear()

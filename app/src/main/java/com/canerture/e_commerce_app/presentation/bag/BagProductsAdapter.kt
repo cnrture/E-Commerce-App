@@ -14,15 +14,15 @@ class BagProductsAdapter : RecyclerView.Adapter<BagProductsAdapter.ProductsViewH
     var onDecreaseClick: (Double) -> Unit = {}
     var onDeleteClick: (Int) -> Unit = {}
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
-        val binding =
-            ItemBagProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ProductsViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder =
+        ProductsViewHolder(
+            ItemBagProductBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
 
-    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
         holder.bind(list[position])
-    }
 
     inner class ProductsViewHolder(private var binding: ItemBagProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -59,7 +59,7 @@ class BagProductsAdapter : RecyclerView.Adapter<BagProductsAdapter.ProductsViewH
         }
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount() = list.size
 
     fun updateList(updatedList: List<Product>) {
         list.clear()

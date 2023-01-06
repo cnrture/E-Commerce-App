@@ -44,6 +44,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             if (it.isFavorite.not()) viewModel.addToFavorite(it)
             else viewModel.deleteFromFavorites(it.id)
         }
+
+        saleProductsAdapter.onProductClick = {
+            val action = HomeFragmentDirections.actionHomeFragmentToProductDetailFragment(it)
+            findNavController().navigate(action)
+        }
     }
 
     private fun initObservers() {

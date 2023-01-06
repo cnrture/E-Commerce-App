@@ -3,8 +3,7 @@ package com.canerture.e_commerce_app.presentation.home.categories
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-
-const val CATEGORY = "category"
+import com.canerture.e_commerce_app.common.util.Constants.CATEGORY
 
 class CategoryPagerAdapter(fragment: Fragment, private val categories: List<String>) :
     FragmentStateAdapter(fragment) {

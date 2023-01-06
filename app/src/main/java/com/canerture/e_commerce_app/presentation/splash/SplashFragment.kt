@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.canerture.e_commerce_app.common.delegate.viewBinding
 import e_commerce_app.R
-import e_commerce_app.databinding.FragmentSplashBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

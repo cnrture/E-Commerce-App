@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
+import com.canerture.e_commerce_app.common.util.Constants.CATEGORY
 import com.canerture.e_commerce_app.common.util.gone
 import com.canerture.e_commerce_app.common.util.showSnackbar
 import com.canerture.e_commerce_app.common.util.visible

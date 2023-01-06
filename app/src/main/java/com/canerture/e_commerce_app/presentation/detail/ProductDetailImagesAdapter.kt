@@ -10,11 +10,12 @@ class ProductDetailImagesAdapter :
 
     private val list = ArrayList<String>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
-        val binding =
-            ItemDetailImageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ProductsViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder =
+        ProductsViewHolder(
+            ItemDetailImageBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
 
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
         holder.bind(list[position])
@@ -27,7 +28,7 @@ class ProductDetailImagesAdapter :
         }
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount() = list.size
 
     fun updateList(updatedList: List<String>) {
         list.clear()
