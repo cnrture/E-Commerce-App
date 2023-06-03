@@ -1,7 +1,6 @@
 # E-Commerce-App
 
 ### E-Commerce application with MVVM & Clean Arch - Hilt - Coroutines - Retrofit - Firebase - Room DB.
-[API Link](https://canerture.com/api/ecommerce/)
 
 ## Project Features
  - MVVM with Clean Architecture
