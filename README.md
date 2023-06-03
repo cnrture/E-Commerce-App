@@ -1,7 +1,3 @@
-# E-Commerce-App
-
-### E-Commerce application with MVVM & Clean Arch - Hilt - Coroutines - Retrofit - Firebase - Room DB.
-
 ## Project Features
  - MVVM with Clean Architecture
  - Coroutines
