@@ -9,9 +9,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.canerture.e_commerce_app.common.Resource
-import com.canerture.e_commerce_app.common.util.gone
-import com.canerture.e_commerce_app.common.util.showSnackbar
-import com.canerture.e_commerce_app.common.util.visible
+import com.canerture.e_commerce_app.common.gone
+import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.common.visible
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment

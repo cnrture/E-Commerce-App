@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
-import com.canerture.e_commerce_app.common.util.gone
-import com.canerture.e_commerce_app.common.util.showSnackbar
-import com.canerture.e_commerce_app.common.util.visible
+import com.canerture.e_commerce_app.common.gone
+import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.common.visible
 import com.canerture.e_commerce_app.presentation.home.categories.CategoryPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint

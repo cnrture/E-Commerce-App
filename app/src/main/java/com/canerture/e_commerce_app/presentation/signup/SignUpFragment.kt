@@ -8,7 +8,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
-import com.canerture.e_commerce_app.common.util.*
+import com.canerture.e_commerce_app.common.gone
+import com.canerture.e_commerce_app.common.isNullorEmpty
+import com.canerture.e_commerce_app.common.isValidEmail
+import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.common.visible
 import com.canerture.e_commerce_app.data.model.User
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint

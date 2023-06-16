@@ -1,6 +1,6 @@
 package com.canerture.e_commerce_app.di
 
-import com.canerture.e_commerce_app.common.util.Constants.BASE_URL
+import com.canerture.e_commerce_app.common.Constants.BASE_URL
 import com.canerture.e_commerce_app.data.source.remote.ProductService
 import dagger.Module
 import dagger.Provides

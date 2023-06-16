@@ -1,6 +1,6 @@
 package com.canerture.e_commerce_app.data.source.remote
 
-import com.canerture.e_commerce_app.common.util.Constants
+import com.canerture.e_commerce_app.common.Constants
 import com.canerture.e_commerce_app.data.model.CRUDResponse
 import com.canerture.e_commerce_app.data.model.Product
 import com.canerture.e_commerce_app.domain.datasource.remote.RemoteDataSource

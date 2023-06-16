@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
-import com.canerture.e_commerce_app.common.util.gone
-import com.canerture.e_commerce_app.common.util.showSnackbar
-import com.canerture.e_commerce_app.common.util.visible
+import com.canerture.e_commerce_app.common.gone
+import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.common.visible
 import com.canerture.e_commerce_app.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import e_commerce_app.R

@@ -1,10 +1,10 @@
 package com.canerture.e_commerce_app.data.repository
 
-import com.canerture.e_commerce_app.common.util.Constants.COLLECTION_PATH
-import com.canerture.e_commerce_app.common.util.Constants.E_MAIL
-import com.canerture.e_commerce_app.common.util.Constants.ID
-import com.canerture.e_commerce_app.common.util.Constants.NICKNAME
-import com.canerture.e_commerce_app.common.util.Constants.PHONE_NUMBER
+import com.canerture.e_commerce_app.common.Constants.COLLECTION_PATH
+import com.canerture.e_commerce_app.common.Constants.E_MAIL
+import com.canerture.e_commerce_app.common.Constants.ID
+import com.canerture.e_commerce_app.common.Constants.NICKNAME
+import com.canerture.e_commerce_app.common.Constants.PHONE_NUMBER
 import com.canerture.e_commerce_app.data.model.User
 import com.canerture.e_commerce_app.domain.repository.Authenticator
 import com.google.firebase.auth.AuthResult

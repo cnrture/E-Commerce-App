@@ -1,4 +1,4 @@
-package com.canerture.e_commerce_app.common.util
+package com.canerture.e_commerce_app.common
 
 import android.content.Context
 import android.util.Patterns

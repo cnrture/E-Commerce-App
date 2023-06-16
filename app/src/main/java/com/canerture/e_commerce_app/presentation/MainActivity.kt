@@ -6,8 +6,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.canerture.e_commerce_app.common.delegate.viewBinding
-import com.canerture.e_commerce_app.common.util.gone
-import com.canerture.e_commerce_app.common.util.visible
+import com.canerture.e_commerce_app.common.gone
+import com.canerture.e_commerce_app.common.visible
 import dagger.hilt.android.AndroidEntryPoint
 import e_commerce_app.R
 import e_commerce_app.databinding.ActivityMainBinding

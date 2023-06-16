@@ -7,10 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
-import com.canerture.e_commerce_app.common.util.gone
-import com.canerture.e_commerce_app.common.util.isValidEmail
-import com.canerture.e_commerce_app.common.util.showSnackbar
-import com.canerture.e_commerce_app.common.util.visible
+import com.canerture.e_commerce_app.common.gone
+import com.canerture.e_commerce_app.common.isValidEmail
+import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.common.visible
 import e_commerce_app.R
 import e_commerce_app.databinding.FragmentForgotPasswordBinding
 

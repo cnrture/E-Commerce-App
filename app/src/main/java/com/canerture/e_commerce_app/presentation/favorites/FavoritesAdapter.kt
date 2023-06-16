@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.canerture.e_commerce_app.common.util.margin
+import com.canerture.e_commerce_app.common.margin
 import com.canerture.e_commerce_app.data.model.Product
 import e_commerce_app.databinding.ItemFavoriteBinding
 
