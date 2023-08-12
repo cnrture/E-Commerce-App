@@ -5,14 +5,14 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
+import com.canerture.e_commerce_app.databinding.FragmentBagBinding
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentBagBinding
 
 @AndroidEntryPoint
 class BagFragment : Fragment(R.layout.fragment_bag) {
@@ -68,10 +68,12 @@ class BagFragment : Fragment(R.layout.fragment_bag) {
                                 }
                             }
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(result.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }

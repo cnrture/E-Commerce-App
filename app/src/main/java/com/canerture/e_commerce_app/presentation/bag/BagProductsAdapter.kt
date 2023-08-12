@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.canerture.e_commerce_app.data.model.Product
-import e_commerce_app.databinding.ItemBagProductBinding
+import com.canerture.e_commerce_app.databinding.ItemBagProductBinding
 
 class BagProductsAdapter : RecyclerView.Adapter<BagProductsAdapter.ProductsViewHolder>() {
 

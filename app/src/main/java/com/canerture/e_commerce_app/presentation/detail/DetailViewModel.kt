@@ -1,6 +1,10 @@
 package com.canerture.e_commerce_app.presentation.detail
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.data.model.CRUDResponse
 import com.canerture.e_commerce_app.data.model.Product

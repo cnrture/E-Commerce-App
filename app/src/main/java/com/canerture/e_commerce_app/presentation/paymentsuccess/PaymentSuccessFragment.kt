@@ -5,12 +5,12 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.databinding.FragmentPaymentSuccessBinding
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentPaymentSuccessBinding
 
 @AndroidEntryPoint
 class PaymentSuccessFragment : Fragment(R.layout.fragment_payment_success) {

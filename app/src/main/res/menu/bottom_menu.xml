@@ -9,8 +9,7 @@
         android:id="@+id/bagFragment"
         android:icon="@drawable/ic_bag_selector"
         android:title="Bag" />
-    <item
-        android:id="@+id/search" />
+    <item android:id="@+id/search" />
     <item
         android:id="@+id/favoritesFragment"
         android:icon="@drawable/ic_favorites_selector"

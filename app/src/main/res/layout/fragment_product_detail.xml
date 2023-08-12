@@ -154,9 +154,9 @@
 
         <RatingBar
             android:id="@+id/ratingBar"
+            style="@android:style/Widget.Material.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@android:style/Widget.Material.RatingBar.Small"
             android:isIndicator="true"
             android:numStars="5"
             android:progressTint="@color/yellow"
@@ -173,8 +173,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/white"
-            android:visibility="gone"
             android:elevation="@dimen/_4sdp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

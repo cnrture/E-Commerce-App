@@ -6,14 +6,14 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.canerture.e_commerce_app.common.delegate.viewBinding
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.CreditCardTextFormatter
 import com.canerture.e_commerce_app.common.checkMonthYear
+import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.isNullorEmpty
+import com.canerture.e_commerce_app.databinding.FragmentPaymentBinding
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentPaymentBinding
 
 @AndroidEntryPoint
 class PaymentFragment : Fragment(R.layout.fragment_payment) {
@@ -78,6 +78,7 @@ class PaymentFragment : Fragment(R.layout.fragment_payment) {
             cardHolderName.isNullorEmpty(getString(R.string.invalid_cardholder_name)).not() -> false
             creditCardNumber.isNullorEmpty(getString(R.string.invalid_credit_card_number))
                 .not() -> false
+
             month.checkMonthYear(monthValue, getString(R.string.invalid_month)).not() -> false
             year.checkMonthYear(yearValue, getString(R.string.invalid_year)).not() -> false
             cvcCode.isNullorEmpty(getString(R.string.invalid_cvc_code)).not() -> false

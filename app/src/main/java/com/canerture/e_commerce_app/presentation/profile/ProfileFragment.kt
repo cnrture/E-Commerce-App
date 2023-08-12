@@ -5,15 +5,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
+import com.canerture.e_commerce_app.databinding.FragmentProfileBinding
 import com.canerture.e_commerce_app.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentProfileBinding
 
 @AndroidEntryPoint
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -43,10 +43,12 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                             progressBar.gone()
                             user = it.data
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }

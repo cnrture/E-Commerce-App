@@ -12,11 +12,11 @@ import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
+import com.canerture.e_commerce_app.databinding.FragmentSearchProductBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.databinding.FragmentSearchProductBinding
 
 @AndroidEntryPoint
 class SearchFragment : BottomSheetDialogFragment() {
@@ -89,10 +89,12 @@ class SearchFragment : BottomSheetDialogFragment() {
                             searchAdapter.updateList(it.data)
                             rvSearchProducts.adapter = searchAdapter
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
@@ -14,10 +15,9 @@ import com.canerture.e_commerce_app.common.isValidEmail
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
 import com.canerture.e_commerce_app.data.model.User
+import com.canerture.e_commerce_app.databinding.FragmentSignUpBinding
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentSignUpBinding
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
@@ -69,10 +69,12 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                             findNavController().navigate(R.id.action_signUpFragment_to_main_graph)
                             progressBar.gone()
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }

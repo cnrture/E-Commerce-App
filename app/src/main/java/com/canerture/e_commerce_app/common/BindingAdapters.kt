@@ -4,8 +4,8 @@ import android.graphics.Paint
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.canerture.e_commerce_app.R
 import com.google.android.material.textview.MaterialTextView
-import e_commerce_app.R
 
 @BindingAdapter("setImage")
 fun setImage(imageView: ImageView, imageUrl: String) {

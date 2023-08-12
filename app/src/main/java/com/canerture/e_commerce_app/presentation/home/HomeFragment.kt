@@ -7,16 +7,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
+import com.canerture.e_commerce_app.databinding.FragmentHomeBinding
 import com.canerture.e_commerce_app.presentation.home.categories.CategoryPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentHomeBinding
 import kotlin.math.abs
 
 @AndroidEntryPoint
@@ -61,10 +61,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                             progressBar.gone()
                             tvNickname.text = it.data.nickname
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }
@@ -90,10 +92,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                                 currentItem = 2
                             }
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }
@@ -104,10 +108,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                             progressBar.gone()
                             tvBagProductsCount.text = it.data.toString()
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }
@@ -124,10 +130,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                                 tab.text = tempCategories[position]
                             }.attach()
                         }
+
                         is Resource.Error -> {
                             progressBar.gone()
                             requireView().showSnackbar(it.throwable.message.toString())
                         }
+
                         Resource.Loading -> progressBar.visible()
                     }
                 }

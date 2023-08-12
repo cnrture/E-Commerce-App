@@ -5,14 +5,14 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.isValidEmail
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentForgotPasswordBinding
+import com.canerture.e_commerce_app.databinding.FragmentForgotPasswordBinding
 
 class ForgotPasswordFragment : Fragment(R.layout.fragment_forgot_password) {
 
@@ -39,10 +39,12 @@ class ForgotPasswordFragment : Fragment(R.layout.fragment_forgot_password) {
                         requireView().showSnackbar(getString(R.string.email_sent))
                         progressBar.gone()
                     }
+
                     is Resource.Error -> {
                         progressBar.gone()
                         requireView().showSnackbar(getString(R.string.something_went_wrong))
                     }
+
                     Resource.Loading -> progressBar.visible()
                 }
             }

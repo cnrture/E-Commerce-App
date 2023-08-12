@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.canerture.e_commerce_app.R
+import com.canerture.e_commerce_app.common.Constants.CATEGORY
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
-import com.canerture.e_commerce_app.common.Constants.CATEGORY
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
+import com.canerture.e_commerce_app.databinding.FragmentCategoryBinding
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentCategoryBinding
 
 @AndroidEntryPoint
 class CategoryFragment : Fragment(R.layout.fragment_category) {
@@ -40,10 +40,12 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
                     categoryProductsAdapter.updateList(it.data.shuffled())
                     binding.rvCategory.adapter = categoryProductsAdapter
                 }
+
                 is Resource.Error -> {
                     binding.progressBar.gone()
                     requireView().showSnackbar(it.throwable.message.toString())
                 }
+
                 Resource.Loading -> binding.progressBar.visible()
             }
         }

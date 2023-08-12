@@ -3,9 +3,9 @@ package com.canerture.e_commerce_app.presentation.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.data.model.Product
-import e_commerce_app.R
-import e_commerce_app.databinding.ItemSaleProductBinding
+import com.canerture.e_commerce_app.databinding.ItemSaleProductBinding
 
 class SaleProductsAdapter : RecyclerView.Adapter<SaleProductsAdapter.ProductsViewHolder>() {
 

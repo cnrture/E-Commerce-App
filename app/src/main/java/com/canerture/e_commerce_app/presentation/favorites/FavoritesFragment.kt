@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
 import com.canerture.e_commerce_app.common.showSnackbar
+import com.canerture.e_commerce_app.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint
-import e_commerce_app.R
-import e_commerce_app.databinding.FragmentFavoritesBinding
 
 @AndroidEntryPoint
 class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
@@ -42,10 +42,12 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
                         favoritesAdapter.updateList(it.data)
                         rvFavorites.adapter = favoritesAdapter
                     }
+
                     is Resource.Error -> {
                         progressBar.gone()
                         requireView().showSnackbar(it.throwable.message.toString())
                     }
+
                     Resource.Loading -> progressBar.gone()
                 }
             }

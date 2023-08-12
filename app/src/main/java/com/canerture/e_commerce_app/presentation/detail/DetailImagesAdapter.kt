@@ -3,7 +3,7 @@ package com.canerture.e_commerce_app.presentation.detail
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import e_commerce_app.databinding.ItemDetailImageBinding
+import com.canerture.e_commerce_app.databinding.ItemDetailImageBinding
 
 class DetailImagesAdapter :
     RecyclerView.Adapter<DetailImagesAdapter.ProductsViewHolder>() {
