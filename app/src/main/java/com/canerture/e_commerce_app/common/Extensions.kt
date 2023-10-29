@@ -1,7 +1,10 @@
 package com.canerture.e_commerce_app.common
 
+import android.content.Context
 import android.util.Patterns
+import android.util.TypedValue
 import android.view.View
+import android.view.ViewGroup
 import android.widget.AutoCompleteTextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -9,6 +12,10 @@ import com.google.android.material.textfield.TextInputLayout
 
 fun View.visible() {
     visibility = View.VISIBLE
+}
+
+fun View.invisible() {
+    visibility = View.INVISIBLE
 }
 
 fun View.gone() {
@@ -51,3 +58,18 @@ fun AutoCompleteTextView.checkMonthYear(value: Int, errorString: String): Boolea
         false
     }
 }
+
+fun View.margin(bottom: Int? = null) {
+    layoutParams<ViewGroup.MarginLayoutParams> {
+        bottom?.run { bottomMargin = dpToPx(this) }
+    }
+}
+
+inline fun <reified T : ViewGroup.LayoutParams> View.layoutParams(block: T.() -> Unit) {
+    if (layoutParams is T) block(layoutParams as T)
+}
+
+fun View.dpToPx(dp: Int): Int = context.dpToPx(dp)
+fun Context.dpToPx(dp: Int): Int =
+    TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics)
+        .toInt()
