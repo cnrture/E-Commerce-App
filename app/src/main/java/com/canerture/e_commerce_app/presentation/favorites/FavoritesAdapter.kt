@@ -41,14 +41,6 @@ class FavoritesAdapter : RecyclerView.Adapter<FavoritesAdapter.ProductsViewHolde
                 }
 
                 imgDelete.setOnClickListener { onDeleteClick(item.id) }
-
-                if (position == list.size - 1) {
-                    binding.cardView.margin(
-                        bottom = cardView.context.resources.getDimensionPixelSize(
-                            com.intuit.sdp.R.dimen._12sdp
-                        )
-                    )
-                }
             }
         }
     }
