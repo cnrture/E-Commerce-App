@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "857525202004",
+    "project_id": "e-commerce-app-2006a",
+    "storage_bucket": "e-commerce-app-2006a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857525202004:android:65c5ac089cdd28ecd6d1c1",
+        "android_client_info": {
+          "package_name": "com.canerture.e_commerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857525202004-bc1n5pjmvrd8hbbb72v23sii72vlpuif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.canerture.e_commerce_app",
+            "certificate_hash": "4a4b21d6002b8b90d57a9efa82d30f365d3149d0"
+          }
+        },
+        {
+          "client_id": "857525202004-r6pv408inll0thlmo6vui8eovh0jl34p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU-MtvZzd7euf0OlYCENdCG4oBMrqeD5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857525202004-r6pv408inll0thlmo6vui8eovh0jl34p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

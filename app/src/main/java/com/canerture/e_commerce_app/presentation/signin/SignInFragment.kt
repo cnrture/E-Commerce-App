@@ -1,6 +1,7 @@
 package com.canerture.e_commerce_app.presentation.signin
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -9,12 +10,9 @@ import com.canerture.e_commerce_app.R
 import com.canerture.e_commerce_app.common.Resource
 import com.canerture.e_commerce_app.common.delegate.viewBinding
 import com.canerture.e_commerce_app.common.gone
-import com.canerture.e_commerce_app.common.isNullorEmpty
-import com.canerture.e_commerce_app.common.isValidEmail
 import com.canerture.e_commerce_app.common.showSnackbar
 import com.canerture.e_commerce_app.common.visible
 import com.canerture.e_commerce_app.databinding.FragmentSignInBinding
-import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,52 +25,47 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initObservers()
-
         with(binding) {
 
             btnSignIn.setOnClickListener {
-                if (checkInfos(etEmail, etPassword)) {
-                    viewModel.signInWithEmailAndPassword(
-                        etEmail.text.toString(),
-                        etPassword.text.toString()
-                    )
+                val email = etEmail.text.toString()
+                val password = etPassword.text.toString()
+                if (checkInfo(email, password)) {
+                    viewModel.signInWithEmailAndPassword(email, password)
                 }
+            }
+        }
+
+        initObservers()
+    }
+
+    private fun initObservers() = with(binding) {
+        viewModel.result.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Success -> {
+                    progressBar.gone()
+                    findNavController().navigate(R.id.action_signInFragment_to_main_graph)
+                }
+
+                is Resource.Error -> {
+                    progressBar.gone()
+                    requireView().showSnackbar(it.throwable.message.toString())
+                }
+
+                Resource.Loading -> progressBar.visible()
             }
         }
     }
 
-    private fun initObservers() {
-
-        with(binding) {
-
-            viewModel.result.observe(viewLifecycleOwner) {
-                when (it) {
-                    is Resource.Success -> {
-                        progressBar.gone()
-                        findNavController().navigate(R.id.action_signInFragment_to_main_graph)
-                    }
-
-                    is Resource.Error -> {
-                        progressBar.gone()
-                        requireView().showSnackbar(it.throwable.message.toString())
-                    }
-
-                    Resource.Loading -> progressBar.visible()
-                }
-            }
-        }
-    }
-
-    private fun checkInfos(
-        email: TextInputEditText,
-        password: TextInputEditText
+    private fun checkInfo(
+        email: String,
+        password: String
     ): Boolean {
-        val checkInfos = when {
-            email.isValidEmail(getString(R.string.invalid_mail)).not() -> false
-            password.isNullorEmpty(getString(R.string.invalid_password)).not() -> false
+        return when {
+            Patterns.EMAIL_ADDRESS.matcher(email).matches() -> false
+            password.isEmpty() -> false
+            password.length <= 6 -> false
             else -> true
         }
-        return checkInfos
     }
 }
