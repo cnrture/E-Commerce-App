@@ -1,6 +1,5 @@
 package com.canerture.e_commerce_app.di
 
-import com.canerture.e_commerce_app.data.repository.FirebaseAuthenticator
 import com.canerture.e_commerce_app.domain.repository.Authenticator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
