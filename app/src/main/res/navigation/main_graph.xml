@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.canerture.e_commerce_app.presentation.home.HomeFragment"
+        android:name="com.canerture.ecommerceapp.presentation.home.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_productDetailFragment"
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/bagFragment"
-        android:name="com.canerture.e_commerce_app.presentation.bag.BagFragment"
+        android:name="com.canerture.ecommerceapp.presentation.bag.BagFragment"
         android:label="BagFragment">
         <action
             android:id="@+id/action_bagFragment_to_paymentFragment"
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.canerture.e_commerce_app.presentation.favorites.FavoritesFragment"
+        android:name="com.canerture.ecommerceapp.presentation.favorites.FavoritesFragment"
         android:label="FavoritesFragment">
         <action
             android:id="@+id/action_favoritesFragment_to_productDetailFragment"
@@ -36,22 +36,22 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.canerture.e_commerce_app.presentation.profile.ProfileFragment"
+        android:name="com.canerture.ecommerceapp.presentation.profile.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.canerture.e_commerce_app.presentation.detail.DetailFragment"
+        android:name="com.canerture.ecommerceapp.presentation.detail.DetailFragment"
         android:label="ProductDetailFragment">
         <action
             android:id="@+id/action_productDetailFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <argument
             android:name="product"
-            app:argType="com.canerture.e_commerce_app.data.model.Product" />
+            app:argType="com.canerture.ecommerceapp.data.model.Product" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.canerture.e_commerce_app.presentation.payment.PaymentFragment"
+        android:name="com.canerture.ecommerceapp.presentation.payment.PaymentFragment"
         android:label="PaymentFragment">
         <action
             android:id="@+id/action_paymentFragment_to_paymentSuccessFragment"
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/paymentSuccessFragment"
-        android:name="com.canerture.e_commerce_app.presentation.paymentsuccess.PaymentSuccessFragment"
+        android:name="com.canerture.ecommerceapp.presentation.paymentsuccess.PaymentSuccessFragment"
         android:label="PaymentSuccessFragment">
         <action
             android:id="@+id/action_paymentSuccessFragment_to_homeFragment"
@@ -67,7 +67,7 @@
     </fragment>
     <dialog
         android:id="@+id/searchFragment"
-        android:name="com.canerture.e_commerce_app.presentation.search.SearchFragment"
+        android:name="com.canerture.ecommerceapp.presentation.search.SearchFragment"
         android:label="SearchFragment">
         <action
             android:id="@+id/searchToDetail"

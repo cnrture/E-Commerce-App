@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -11,17 +12,34 @@ plugins {
 }
 
 android {
-    namespace = "com.canerture.e_commerce_app"
+    namespace = "com.canerture.ecommerceapp"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
+    val localProperties = Properties().apply {
+        val propsFile = rootProject.file("local.properties")
+        if (propsFile.exists()) load(propsFile.inputStream())
+    }
+
     defaultConfig {
-        applicationId = "com.canerture.e_commerce_app"
+        applicationId = "com.canerture.ecommerceapp"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "BASE_URL",
+            localProperties.getProperty("BASE_URL").orEmpty(), // https://api.candroid.dev/ecommerce/
+        )
+
+        buildConfigField(
+            "String",
+            "API_KEY",
+            localProperties.getProperty("API_KEY").orEmpty(),
+        )
     }
 
     buildTypes {
@@ -36,7 +54,7 @@ android {
 
     buildFeatures {
         viewBinding = true
-        dataBinding = true
+        buildConfig = true
     }
 
     compileOptions {
@@ -89,8 +107,10 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.gson)
+    implementation(libs.okhttp.logging)
 
     // Glide
+    implementation(libs.glide)
     implementation(libs.landscapist.glide)
 
     // UI Libraries

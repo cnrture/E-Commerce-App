@@ -37,8 +37,10 @@ firebaseBom = "34.8.0"
 # Retrofit
 retrofit = "3.0.0"
 gson = "2.13.2"
+okhttpLogging = "5.3.0"
 
 # Glide
+glide = "4.17.0"
 landscapistGlide = "2.9.0"
 
 # UI Libraries
@@ -89,8 +91,10 @@ firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogging" }
 
 # Glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 landscapist-glide = { group = "com.github.skydoves", name = "landscapist-glide", version.ref = "landscapistGlide" }
 
 # UI Libraries

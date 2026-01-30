@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.canerture.e_commerce_app">
+    package="com.canerture.ecommerceapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.canerture.e_commerce_app.HiltApplication"
+        android:name="com.canerture.ecommerceapp.HiltApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,7 +17,7 @@
         android:theme="@style/Theme.UpSchoolECommerceApp"
         tools:targetApi="31">
         <activity
-            android:name="com.canerture.e_commerce_app.presentation.MainActivity"
+            android:name="com.canerture.ecommerceapp.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

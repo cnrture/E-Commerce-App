@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.canerture.e_commerce_app.presentation.signin.SignInFragment"
+        android:name="com.canerture.ecommerceapp.presentation.signin.SignInFragment"
         android:label="SignInFragment">
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.canerture.e_commerce_app.presentation.signup.SignUpFragment"
+        android:name="com.canerture.ecommerceapp.presentation.signup.SignUpFragment"
         android:label="SignUpFragment">
         <action
             android:id="@+id/action_signUpFragment_to_main_graph"
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.canerture.e_commerce_app.presentation.forgotpassword.ForgotPasswordFragment"
+        android:name="com.canerture.ecommerceapp.presentation.forgotpassword.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment">
         <action
             android:id="@+id/action_forgotPasswordFragment_to_signInFragment"
@@ -44,7 +44,7 @@
     <include app:graph="@navigation/main_graph" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.canerture.e_commerce_app.presentation.splash.SplashFragment"
+        android:name="com.canerture.ecommerceapp.presentation.splash.SplashFragment"
         android:label="SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_signUpFragment"

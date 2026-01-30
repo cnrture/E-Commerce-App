@@ -1,0 +1,59 @@
+package com.canerture.ecommerceapp.presentation.search
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.canerture.ecommerceapp.data.model.Product
+import com.canerture.ecommerceapp.databinding.ItemSearchProductBinding
+
+class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ProductsViewHolder>() {
+
+    private val list = ArrayList<Product>()
+
+    var onProductClick: (Product) -> Unit = {}
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder =
+        ProductsViewHolder(
+            ItemSearchProductBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
+
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) =
+        holder.bind(list[position])
+
+    inner class ProductsViewHolder(private var binding: ItemSearchProductBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(item: Product) {
+            with(binding) {
+                tvTitle.text = item.title
+
+                tvProductSale.text = if (item.salePrice != null) {
+                    "$${item.salePrice}"
+                } else {
+                    ""
+                }
+
+                tvPrice.text = "$${item.price}"
+
+                ratingBar.rating = item.rate.toFloat()
+
+                Glide.with(imgProduct).load(item.image).into(imgProduct)
+
+                imgProduct.setOnClickListener {
+                    onProductClick(item)
+                }
+            }
+        }
+    }
+
+    override fun getItemCount() = list.size
+
+    fun updateList(updatedList: List<Product>) {
+        list.clear()
+        list.addAll(updatedList)
+        notifyItemRangeInserted(0, updatedList.size)
+    }
+}
