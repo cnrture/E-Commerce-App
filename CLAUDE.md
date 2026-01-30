@@ -2,7 +2,11 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Build Commands
+## Build System
+
+This project uses **Gradle with Kotlin DSL** and **Version Catalog** (`libs.versions.toml`).
+
+### Build Commands
 
 ```bash
 # Build the project
@@ -28,6 +32,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Generate release APK
 ./gradlew assembleRelease
+
+# View all available tasks
+./gradlew tasks --all
+```
+
+### Dependency Management
+
+All versions, libraries, and plugins are managed in `gradle/libs.versions.toml`. To add a new dependency:
+
+1. Add the version to `[versions]` section
+2. Add the library to `[libraries]` section
+3. Add to `app/build.gradle.kts` using `libs.<library-name>`
+
+Example:
+```toml
+# gradle/libs.versions.toml
+[versions]
+coil = "2.5.0"
+
+[libraries]
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+```
+
+```kotlin
+// app/build.gradle.kts
+dependencies {
+    implementation(libs.coil)
+}
 ```
 
 ## Architecture Overview
